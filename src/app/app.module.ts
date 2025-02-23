@@ -30,6 +30,10 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { BusBookingListComponent } from './bus-booking-list/bus-booking-list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BusSearchComponent } from './bus-search/bus-search.component';
+import { AirSearchComponent } from './air-search/air-search.component';
+import { ShipSearchComponent } from './ship-search/ship-search.component';
+import { HotelSearchComponent } from './hotel-search/hotel-search.component';
 
 
 
@@ -62,7 +66,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SearchFormComponent,
     FlightListComponent,
     BusBookingListComponent,
-    SidebarComponent
+    SidebarComponent,
+    BusSearchComponent,
+    AirSearchComponent,
+    ShipSearchComponent,
+    HotelSearchComponent
     
   ],
   imports: [

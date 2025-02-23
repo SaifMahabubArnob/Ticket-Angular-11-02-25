@@ -9,24 +9,22 @@
 
     <!-- Search Form -->
     <div class="search-form">
-        <div class="input-group">
-            <label>GOING FROM</label>
-            <input type="text" [(ngModel)]="fromPlace" placeholder="Enter location">
-        </div>
-
-        <div class="input-group">
-            <label>GOING TO</label>
-            <input type="text" [(ngModel)]="toPlace" placeholder="Enter destination">
-        </div>
-
-        <div class="input-group">
-            <label>JOURNEY DATE</label>
-            <input type="date" [(ngModel)]="journeyDate">
-        </div>
-
+        <!-- Common Fields -->
         <div class="input-group" *ngIf="selectedTab !== 'hotel'">
-            <label>RETURN DATE</label>
-            <input type="date" [(ngModel)]="returnDate">
+            <label>GOING FROM</label>
+            <input type="text" [(ngModel)]="fromPlace" placeholder="Enter location" [class.error]="!fromPlace && isSubmitted">
+        </div>
+        <div class="input-group">
+            <label>{{ selectedTab === 'hotel' ? 'LOCATION' : 'GOING TO' }}</label>
+            <input type="text" [(ngModel)]="toPlace" placeholder="{{ selectedTab === 'hotel' ? 'Enter city or area' : 'Enter destination' }}" [class.error]="!toPlace && isSubmitted">
+        </div>
+        <div class="input-group">
+            <label>{{ selectedTab === 'hotel' ? 'CHECK-IN DATE' : 'JOURNEY DATE' }}</label>
+            <input type="date" [(ngModel)]="journeyDate" [class.error]="!journeyDate && isSubmitted">
+        </div>
+        <div class="input-group" *ngIf="selectedTab === 'hotel' || selectedTab !== 'hotel'">
+            <label>{{ selectedTab === 'hotel' ? 'CHECK-OUT DATE' : 'RETURN DATE' }}</label>
+            <input type="date" [(ngModel)]="returnDate" [class.error]="!returnDate && isSubmitted">
         </div>
 
         <button class="search-btn" (click)="search()">Search {{ selectedTab | titlecase }}</button>

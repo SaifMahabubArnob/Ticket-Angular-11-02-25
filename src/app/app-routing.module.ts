@@ -22,6 +22,11 @@ import { FlightBookingFormComponent } from './flight-booking-form/flight-booking
 import { ShipBookingFormComponent } from './ship-booking-form/ship-booking-form.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { BusBookingListComponent } from './bus-booking-list/bus-booking-list.component';
+import { BusSearchComponent } from './bus-search/bus-search.component';
+import { AirSearchComponent } from './air-search/air-search.component';
+import { ShipSearchComponent } from './ship-search/ship-search.component';
+import { HotelSearchComponent } from './hotel-search/hotel-search.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,7 +51,11 @@ const routes: Routes = [
   { path: 'ship-booking', component: ShipBookingFormComponent },
   { path: 'flightList', component: FlightListComponent },
   { path: 'BusBookingList', component: BusBookingListComponent },
-
+  { path: 'bus-search', component: BusSearchComponent }, // Bus Search Results page
+  { path: 'air-search', component: AirSearchComponent }, // Air Search Results page
+  { path: 'ship-search', component: ShipSearchComponent }, // Ship Search Results page
+  { path: 'hotel-search', component: HotelSearchComponent } // Hotel Search Results page
+  
 ];
 
 @NgModule({
